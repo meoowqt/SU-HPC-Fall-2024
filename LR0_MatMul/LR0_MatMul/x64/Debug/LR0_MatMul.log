@@ -7,8 +7,10 @@ C:\Users\vechk\source\repos\meoowqt\SU-HPC-Fall-2024\LR0_MatMul\LR0_MatMul\kerne
   
   Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
   
+C:\Users\vechk\source\repos\meoowqt\SU-HPC-Fall-2024\LR0_MatMul\LR0_MatMul\kernel.cu(75): warning #177-D: variable "n2" was declared but never referenced
+        int n2 = 2000;
+            ^
+  
   kernel.cu
-  tmpxft_00003aec_00000000-7_kernel.cudafe1.cpp
-     Создается библиотека C:\Users\vechk\source\repos\meoowqt\SU-HPC-Fall-2024\LR0_MatMul\x64\Debug\LR0_MatMul.lib и объект C:\Users\vechk\source\repos\meoowqt\SU-HPC-Fall-2024\LR0_MatMul\x64\Debug\LR0_MatMul.exp
-LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+  tmpxft_00002d74_00000000-7_kernel.cudafe1.cpp
   LR0_MatMul.vcxproj -> C:\Users\vechk\source\repos\meoowqt\SU-HPC-Fall-2024\LR0_MatMul\x64\Debug\LR0_MatMul.exe

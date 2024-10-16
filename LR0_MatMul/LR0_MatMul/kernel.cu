@@ -56,7 +56,7 @@ vector<int> multiplyMatrixOnGPU(const vector<int>& A, const vector<int>& B, int 
     dim3 blocksPerGrid((n + threadsPerBlock.x - 1) / threadsPerBlock.x, (n + threadsPerBlock.y - 1) / threadsPerBlock.y);
 
     // Запуск Kernel
-    multiplyGPU << < blocksPerGrid, threadsPerBlock >> > (d_A, d_B, d_C, n);
+    multiplyGPU <<< blocksPerGrid, threadsPerBlock >>> (d_A, d_B, d_C, n);
 
     // Копирование результата обратно в CPU
     vector<int> result(n * n);
@@ -74,38 +74,42 @@ int main() {
     int n1 = N1;
     int n2 = N2;
     // Используем одномерные вектора для представления матриц
-    vector<int> A(n2 * n2, 1);
-    vector<int> B(n2 * n2, 1);
+    for (int n = N1; n <= 2000; n += 500) {
+        vector<int> A(n * n, 1);
+        vector<int> B(n * n, 1);
 
-    // Время выполнения на GPU
-    auto startGPU = chrono::high_resolution_clock::now();
-    vector<int> C_GPU = multiplyMatrixOnGPU(A, B, n2);
-    auto endGPU = chrono::high_resolution_clock::now();
-    chrono::duration<double> durationGPU = endGPU - startGPU;
-    cout << "Execution time on GPU: " << durationGPU.count() << " sec\n";
+        // Время выполнения на GPU
+        auto startGPU = chrono::high_resolution_clock::now();
+        vector<int> C_GPU = multiplyMatrixOnGPU(A, B, n);
+        auto endGPU = chrono::high_resolution_clock::now();
+        chrono::duration<double> durationGPU = endGPU - startGPU;
+        cout << "Execution time on GPU for " << n << "x" << n << ": " << durationGPU.count() << " sec\n";
 
-    // Время выполнения на CPU
-    auto startCPU = chrono::high_resolution_clock::now();
-    vector<int> C_CPU = multiplyCPU(A, B, n2);
-    auto endCPU = chrono::high_resolution_clock::now();
-    chrono::duration<double> durationCPU = endCPU - startCPU;
-    cout << "Execution time on CPU: " << durationCPU.count() << " sec\n";
-
-    // Проверка на правильность вычисления
-    bool correct = true;
-    for (int i = 0; i < n2 * n2; ++i) {
-        if (C_CPU[i] != C_GPU[i]) {
-            correct = false;
-            break;
+        // Время выполнения на CPU
+        auto startCPU = chrono::high_resolution_clock::now();
+        vector<int> C_CPU = multiplyCPU(A, B, n);
+        auto endCPU = chrono::high_resolution_clock::now();
+        chrono::duration<double> durationCPU = endCPU - startCPU;
+        cout << "Execution time on CPU for " << n << "x" << n << ": " << durationCPU.count() << " sec\n";
+        
+        // Проверка на правильность вычисления
+        bool correct = true;
+        for (int i = 0; i < n * n; ++i) {
+            if (C_CPU[i] != C_GPU[i]) {
+                correct = false;
+                break;
+            }
         }
-    }
 
-    if (correct) {
-        cout << "Matrix multiplication is correct.\n";
-    }
-    else {
-        cout << "Matrix multiplication is incorrect.\n";
-    }
+        if (correct) {
+            cout << "Matrix multiplication is correct.\n";
+        }
+        else {
+            cout << "Matrix multiplication is incorrect.\n";
+        }
 
+        cout << "\n";
+         
+    }
     return 0;
 }
