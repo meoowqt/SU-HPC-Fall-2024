@@ -16,10 +16,6 @@
 4. Результат копируется обратно из GPU в CPU.
 5. Освобождается память на GPU.
 
-## Пример работы программы
-![image](https://github.com/user-attachments/assets/989ad598-f6ad-4130-b5d3-c91b640c43fd)
-
-
 ## Выводы
 
 | Размер матриц | Время на CPU | Время на GPU |
@@ -43,7 +39,8 @@
 Каждый поток обрабатывает один элемент массива.
 
 ## Пример работы программы
-![image](https://github.com/user-attachments/assets/c0c31acf-eca1-4e0c-ab28-5957152f1081)
+![image](https://github.com/user-attachments/assets/0dc7908c-939d-44b5-b84c-c1dc25f6f926)
+
 
 ## Выводы
 
