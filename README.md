@@ -17,7 +17,8 @@
 5. Освобождается память на GPU.
 
 ## Пример работы программы
-![image](https://github.com/user-attachments/assets/4f160c72-681d-45c3-ba85-a81b7186b99b)
+![image](https://github.com/user-attachments/assets/989ad598-f6ad-4130-b5d3-c91b640c43fd)
+
 
 ## Выводы
 
