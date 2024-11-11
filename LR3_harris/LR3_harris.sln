@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LR3_harris", "LR3_harris.vcxproj", "{C06F74B5-4E40-4551-9E1B-91FFFD00BFF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{52D0D521-5848-480D-B609-583909D217D3}"
+	ProjectSection(SolutionItems) = preProject
+		EasyBMP.cpp = EasyBMP.cpp
+		EasyBMP.h = EasyBMP.h
+		EasyBMP_BMP.h = EasyBMP_BMP.h
+		EasyBMP_ChangeLog.txt = EasyBMP_ChangeLog.txt
+		EasyBMP_DataStructures.h = EasyBMP_DataStructures.h
+		EasyBMP_VariousBMPutilities.h = EasyBMP_VariousBMPutilities.h
+		input.bmp = input.bmp
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C06F74B5-4E40-4551-9E1B-91FFFD00BFF7}.Debug|x64.ActiveCfg = Debug|x64
+		{C06F74B5-4E40-4551-9E1B-91FFFD00BFF7}.Debug|x64.Build.0 = Debug|x64
+		{C06F74B5-4E40-4551-9E1B-91FFFD00BFF7}.Release|x64.ActiveCfg = Release|x64
+		{C06F74B5-4E40-4551-9E1B-91FFFD00BFF7}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4704D3F1-105D-4C93-9C1F-E0680CF4CD65}
+	EndGlobalSection
+EndGlobal

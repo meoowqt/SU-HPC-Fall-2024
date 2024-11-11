@@ -93,7 +93,6 @@
     <ClInclude Include="EasyBMP_VariousBMPutilities.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="angelina.bmp" />
     <Image Include="NoiseLana.bmp" />
     <Image Include="salt_pepper.bmp" />
   </ItemGroup>
